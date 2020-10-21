@@ -1,0 +1,44 @@
+<div class="head">
+
+</div>
+<h2 style="text-align:center">Tous les hackatons</h2>
+<div class="container">
+<div class="alert alert-success alert-dismissable" *ngIf="demandeEff()">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <strong>Félicitations !</strong>Demande de participation effectuée
+</div>
+</div>
+<table>
+  <tr>
+    <td>
+        <div class="form-inline my-2 my-lg-0"> 
+            <input [(ngModel)]="Rville" class="form-control mr-sm-2" type="text" placeholder="chercher par ville" aria-label="Search"/>
+            <button value="filter" class="btn btn-outline-success my-2 my-sm-0" (click)="chercherVille()">Recherche</button>
+          </div>
+    </td>
+    <td>
+        <div class="ligne_verticale"></div>
+    </td>
+    <td>
+        <div class="form-inline my-2 my-lg-0"> 
+            <input [(ngModel)]="Rtheme" class="form-control mr-sm-2" type="text" placeholder="chercher par theme" aria-label="Search"/>
+            <button value="filter" class="btn btn-outline-success my-2 my-sm-0" (click)="chercherTheme()">Recherche</button>
+          </div>
+    </td>
+  </tr>
+</table>
+
+
+<div  class="row" >
+  <div class="card" *ngFor="let a of tab ">      
+          <h1>{{a.intitule}}</h1>
+          <p class="price">{{a.ville}}</p>
+          <p>{{a.description}}</p>
+          <p><button (click)="affDet(a)">Details</button></p>
+        </div>
+</div>
+
+
+
+  
+
